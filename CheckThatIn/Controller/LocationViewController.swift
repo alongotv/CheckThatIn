@@ -29,7 +29,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         startReceivingLocationChanges()
     }
     
-    
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last as? CLLocation {
             locationTextLabel.text = location.description
@@ -71,7 +70,4 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
             print("unknown")
         }
     }
-    
-    
 }
-
