@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
-
+class LocationViewController: UIViewController, CLLocationManagerDelegate {
+    
+    lazy var locationManager = CLLocationManager()
+    
+    @IBOutlet weak var locationTextLabel: UILabel!
+   
+    @IBAction func updateLocation() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
