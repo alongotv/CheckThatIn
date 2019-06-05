@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E738D7E822A79AA3001E3AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */; };
-		E738D7EA22A79AA3001E3AA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7E922A79AA3001E3AA6 /* ViewController.swift */; };
+		E738D7EA22A79AA3001E3AA6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */; };
 		E738D7ED22A79AA3001E3AA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E738D7EB22A79AA3001E3AA6 /* Main.storyboard */; };
 		E738D7F022A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E738D7EE22A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld */; };
 		E738D7F222A79AA5001E3AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E738D7F122A79AA5001E3AA6 /* Assets.xcassets */; };
 		E738D7F522A79AA5001E3AA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E738D7F322A79AA5001E3AA6 /* LaunchScreen.storyboard */; };
 		E738D80022A79AA5001E3AA6 /* CheckThatInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7FF22A79AA5001E3AA6 /* CheckThatInTests.swift */; };
+		E738D80C22A79CE7001E3AA6 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D80B22A79CE7001E3AA6 /* CoreDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 /* Begin PBXFileReference section */
 		E738D7E422A79AA3001E3AA6 /* CheckThatIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckThatIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E738D7E922A79AA3001E3AA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		E738D7EC22A79AA3001E3AA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E738D7EF22A79AA3001E3AA6 /* CheckThatIn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheckThatIn.xcdatamodel; sourceTree = "<group>"; };
 		E738D7F122A79AA5001E3AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		E738D7FB22A79AA5001E3AA6 /* CheckThatInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckThatInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E738D7FF22A79AA5001E3AA6 /* CheckThatInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckThatInTests.swift; sourceTree = "<group>"; };
 		E738D80122A79AA5001E3AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E738D80B22A79CE7001E3AA6 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +81,14 @@
 		E738D7E622A79AA3001E3AA6 /* CheckThatIn */ = {
 			isa = PBXGroup;
 			children = (
+				E738D80A22A79B79001E3AA6 /* Controller */,
 				E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */,
-				E738D7E922A79AA3001E3AA6 /* ViewController.swift */,
 				E738D7EB22A79AA3001E3AA6 /* Main.storyboard */,
 				E738D7F122A79AA5001E3AA6 /* Assets.xcassets */,
 				E738D7F322A79AA5001E3AA6 /* LaunchScreen.storyboard */,
 				E738D7F622A79AA5001E3AA6 /* Info.plist */,
 				E738D7EE22A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld */,
+				E738D80B22A79CE7001E3AA6 /* CoreDataRepository.swift */,
 			);
 			path = CheckThatIn;
 			sourceTree = "<group>";
@@ -97,6 +100,14 @@
 				E738D80122A79AA5001E3AA6 /* Info.plist */,
 			);
 			path = CheckThatInTests;
+			sourceTree = "<group>";
+		};
+		E738D80A22A79B79001E3AA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E738D7EA22A79AA3001E3AA6 /* ViewController.swift in Sources */,
+				E738D7EA22A79AA3001E3AA6 /* LocationViewController.swift in Sources */,
 				E738D7E822A79AA3001E3AA6 /* AppDelegate.swift in Sources */,
+				E738D80C22A79CE7001E3AA6 /* CoreDataRepository.swift in Sources */,
 				E738D7F022A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
