@@ -30,7 +30,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last as? CLLocation {
+        if let location = locations.last {
             locationTextLabel.text = location.description
             locationManager.stopUpdatingLocation()
         }
