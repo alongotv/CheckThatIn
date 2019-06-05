@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LocationViewController.swift
 //  CheckThatIn
 //
 //  Created by Vladimir on 05/06/2019.
