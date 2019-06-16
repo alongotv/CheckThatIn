@@ -14,7 +14,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     
     lazy var locationManager = CLLocationManager()
     
-    @IBOutlet weak var mapViewOutlet: MKMapView!
+    lazy var coreDataLocationCRUD = CoreDataLocationCRUD()
+
+    var lastKnownLocation: CLLocation?
+
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func updateLocation() {
         mapView.removeAnnotations(mapView.annotations)
@@ -58,6 +62,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last {
+            self.lastKnownLocation = lastLocation
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let location = CLLocationCoordinate2D(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude)
             mapView.setRegion(MKCoordinateRegion(center: location, span: span), animated: true)
