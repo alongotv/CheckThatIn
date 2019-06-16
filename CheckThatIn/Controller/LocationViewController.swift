@@ -17,7 +17,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var mapViewOutlet: MKMapView!
     
     @IBAction func updateLocation() {
-        mapViewOutlet.removeAnnotations(mapViewOutlet.annotations)
+        mapView.removeAnnotations(mapView.annotations)
         startReceivingLocationChanges()
     }
     
@@ -60,12 +60,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         if let lastLocation = locations.last {
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let location = CLLocationCoordinate2D(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude)
-            mapViewOutlet.setRegion(MKCoordinateRegion(center: location, span: span), animated: true)
+            mapView.setRegion(MKCoordinateRegion(center: location, span: span), animated: true)
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
-            mapViewOutlet.addAnnotation(annotation)
-            
+            mapView.addAnnotation(annotation)
             locationManager.stopUpdatingLocation()
         }
         // Do something with the location.
