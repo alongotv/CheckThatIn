@@ -131,7 +131,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "fromCurrentLocationVCToLocationListVC":
-            print("2")
+            print("fromCurrentLocationVCToLocationListVC")
         case .none:
             print("Unexpectedly found nil")
         case .some(_):
