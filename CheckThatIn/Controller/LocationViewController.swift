@@ -53,7 +53,16 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         }
         // Notify the user of any errors.
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.authorizedWhenInUse || status == CLAuthorizationStatus.authorizedAlways) {
+            // The user accepted authorization
+            startReceivingLocationChanges()
+            
+        }
+        startReceivingLocationChanges()
+    }
+    
     func startReceivingLocationChanges() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         if authorizationStatus != .authorizedWhenInUse && authorizationStatus != .authorizedAlways {
