@@ -28,3 +28,9 @@ public extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+public extension Location {
+    internal func convertToModel()-> LocationModel {
+        return LocationModel(latitude: self.latitude, longitude: self.longitude, dateCaptured: self.date, descriptionToSave: self.description)
+    }
+}
