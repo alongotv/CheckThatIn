@@ -31,6 +31,6 @@ public extension UIColor {
 
 public extension Location {
     internal func convertToModel()-> LocationModel {
-        return LocationModel(latitude: self.latitude, longitude: self.longitude, dateCaptured: self.date, descriptionToSave: self.description)
+        return LocationModel(latitude: self.latitude, longitude: self.longitude, dateCaptured: self.date, descriptionToSave: self.locationDescription)
     }
 }
