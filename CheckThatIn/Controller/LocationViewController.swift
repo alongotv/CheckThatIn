@@ -17,7 +17,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var mapViewOutlet: MKMapView!
     
     @IBAction func updateLocation() {
-        
+        mapViewOutlet.removeAnnotations(mapViewOutlet.annotations)
+        startReceivingLocationChanges()
     }
     
     override func viewDidLoad() {
