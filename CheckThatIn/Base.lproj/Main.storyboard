@@ -24,6 +24,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="07O-Fi-t9I"/>
                                 </connections>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-xu-kUt" customClass="BackgroundStackView" customModule="CheckThatIn" customModuleProvider="target">
+                                <rect key="frame" x="344" y="724" width="50" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8M-SY-qLT">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="kEK-bF-unN"/>
+                                            <constraint firstAttribute="height" constant="50" id="sKr-Wm-2gV"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                        <state key="normal" image="LocationIcon"/>
+                                        <connections>
+                                            <action selector="updateLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="x4u-Ur-rnd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-Oo-YEV">
+                                        <rect key="frame" x="0.0" y="58" width="50" height="30"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -31,6 +52,8 @@
                             <constraint firstItem="9JC-ce-jBV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pqg-8d-h3Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9JC-ce-jBV" secondAttribute="trailing" id="VnG-iJ-iXp"/>
                             <constraint firstItem="9JC-ce-jBV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XqL-sM-pO7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gto-xu-kUt" secondAttribute="bottom" constant="50" id="o0F-as-a1r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gto-xu-kUt" secondAttribute="trailing" constant="20" id="vjJ-3P-ATh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -43,4 +66,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LocationIcon" width="170.5" height="170.5"/>
+    </resources>
 </document>
