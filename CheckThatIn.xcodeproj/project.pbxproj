@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71AE7A122B65CDC004D2CA5 /* BackgroundStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7A022B65CDC004D2CA5 /* BackgroundStackView.swift */; };
+		E71AE7A322B65EB8004D2CA5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7A222B65EB8004D2CA5 /* Extensions.swift */; };
+		E71AE7A822B667F1004D2CA5 /* CoreDataLocationCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7A722B667F1004D2CA5 /* CoreDataLocationCRUD.swift */; };
+		E71AE7AD22B68D68004D2CA5 /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7AB22B68D68004D2CA5 /* LocationCollectionViewCell.swift */; };
+		E71AE7B022B69277004D2CA5 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7AF22B69277004D2CA5 /* LocationListViewController.swift */; };
+		E71AE7B222B6987D004D2CA5 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7B122B6987D004D2CA5 /* LocationDetailsViewController.swift */; };
+		E71AE7B422B6AB84004D2CA5 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AE7B322B6AB84004D2CA5 /* LocationModel.swift */; };
 		E738D7E822A79AA3001E3AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */; };
 		E738D7EA22A79AA3001E3AA6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */; };
 		E738D7ED22A79AA3001E3AA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E738D7EB22A79AA3001E3AA6 /* Main.storyboard */; };
@@ -28,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E71AE7A022B65CDC004D2CA5 /* BackgroundStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStackView.swift; sourceTree = "<group>"; };
+		E71AE7A222B65EB8004D2CA5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E71AE7A722B667F1004D2CA5 /* CoreDataLocationCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLocationCRUD.swift; sourceTree = "<group>"; };
+		E71AE7AB22B68D68004D2CA5 /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E71AE7AF22B69277004D2CA5 /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
+		E71AE7B122B6987D004D2CA5 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		E71AE7B322B6AB84004D2CA5 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		E738D7E422A79AA3001E3AA6 /* CheckThatIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckThatIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +74,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E71AE79F22B65CB4004D2CA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E71AE7A022B65CDC004D2CA5 /* BackgroundStackView.swift */,
+				E71AE7AB22B68D68004D2CA5 /* LocationCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E71AE7A422B66318004D2CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E71AE7A722B667F1004D2CA5 /* CoreDataLocationCRUD.swift */,
+				E71AE7B322B6AB84004D2CA5 /* LocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E738D7DB22A79AA3001E3AA6 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +113,8 @@
 		E738D7E622A79AA3001E3AA6 /* CheckThatIn */ = {
 			isa = PBXGroup;
 			children = (
+				E71AE7A422B66318004D2CA5 /* Model */,
+				E71AE79F22B65CB4004D2CA5 /* View */,
 				E738D80A22A79B79001E3AA6 /* Controller */,
 				E738D7E722A79AA3001E3AA6 /* AppDelegate.swift */,
 				E738D7EB22A79AA3001E3AA6 /* Main.storyboard */,
@@ -89,6 +123,7 @@
 				E738D7F622A79AA5001E3AA6 /* Info.plist */,
 				E738D7EE22A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld */,
 				E738D80B22A79CE7001E3AA6 /* CoreDataRepository.swift */,
+				E71AE7A222B65EB8004D2CA5 /* Extensions.swift */,
 			);
 			path = CheckThatIn;
 			sourceTree = "<group>";
@@ -106,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				E738D7E922A79AA3001E3AA6 /* LocationViewController.swift */,
+				E71AE7AF22B69277004D2CA5 /* LocationListViewController.swift */,
+				E71AE7B122B6987D004D2CA5 /* LocationDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,9 +249,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E738D7EA22A79AA3001E3AA6 /* LocationViewController.swift in Sources */,
+				E71AE7B022B69277004D2CA5 /* LocationListViewController.swift in Sources */,
+				E71AE7A322B65EB8004D2CA5 /* Extensions.swift in Sources */,
 				E738D7E822A79AA3001E3AA6 /* AppDelegate.swift in Sources */,
+				E71AE7B222B6987D004D2CA5 /* LocationDetailsViewController.swift in Sources */,
+				E71AE7B422B6AB84004D2CA5 /* LocationModel.swift in Sources */,
 				E738D80C22A79CE7001E3AA6 /* CoreDataRepository.swift in Sources */,
+				E71AE7A822B667F1004D2CA5 /* CoreDataLocationCRUD.swift in Sources */,
 				E738D7F022A79AA3001E3AA6 /* CheckThatIn.xcdatamodeld in Sources */,
+				E71AE7AD22B68D68004D2CA5 /* LocationCollectionViewCell.swift in Sources */,
+				E71AE7A122B65CDC004D2CA5 /* BackgroundStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
