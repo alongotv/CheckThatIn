@@ -31,8 +31,15 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            locationTextLabel.text = location.description
+        if let lastLocation = locations.last {
+            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let location = CLLocationCoordinate2D(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude)
+            mapViewOutlet.setRegion(MKCoordinateRegion(center: location, span: span), animated: true)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            mapViewOutlet.addAnnotation(annotation)
+            
             locationManager.stopUpdatingLocation()
         }
         // Do something with the location.
