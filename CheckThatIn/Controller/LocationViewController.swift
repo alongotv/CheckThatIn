@@ -21,6 +21,32 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         startReceivingLocationChanges()
     }
     
+    @IBAction func addLocationButtonClicked(_ sender: Any) {
+        let alertController: UIAlertController = UIAlertController(title: "Save your current location", message: "", preferredStyle: .alert)
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            //cancel code
+        }
+        alertController.addAction(cancelAction)
+
+        //Create an optional action
+        let saveAction: UIAlertAction = UIAlertAction(title: "Save", style: .default) { action -> Void in
+            let enteredDescription = alertController.textFields![0].text
+            let lastKnownLocationCoordinates = self.lastKnownLocation?.coordinate
+            
+            let locationToSave = LocationModel(latitude: lastKnownLocationCoordinates?.latitude.description, longitude: (lastKnownLocationCoordinates?.longitude.description)!, dateCaptured: Date(), descriptionToSave: enteredDescription)
+            self.coreDataLocationCRUD.createLocation(location: locationToSave)
+        }
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter description(optional)"
+        }
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
