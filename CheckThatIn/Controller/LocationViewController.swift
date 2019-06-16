@@ -126,4 +126,16 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
             print("unknown")
         }
     }
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "fromCurrentLocationVCToLocationListVC":
+            print("2")
+        case .none:
+            print("Unexpectedly found nil")
+        case .some(_):
+            print("Unhandled Segue")
+        }
+    }
 }
