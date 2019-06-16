@@ -9,12 +9,12 @@
 import UIKit
 import CoreLocation
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
+class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     lazy var locationManager = CLLocationManager()
     
-    @IBOutlet weak var locationTextLabel: UILabel!
-   
+    @IBOutlet weak var mapViewOutlet: MKMapView!
+    
     @IBAction func updateLocation() {
         
     }
