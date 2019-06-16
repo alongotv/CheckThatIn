@@ -27,7 +27,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         locationManager.delegate = self
         
         requestPermissionToUseLocation()
-        startReceivingLocationChanges()
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
