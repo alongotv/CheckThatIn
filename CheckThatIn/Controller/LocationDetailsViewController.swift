@@ -30,15 +30,6 @@ class LocationDetailsViewController: UIViewController {
         } else {
             descriptionLabel.text = ""
         }
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    func stringFromDate(date: Date)-> String {
-        let iso8601Formatter = ISO8601DateFormatter()
-        iso8601Formatter.formatOptions = [.withFullDate, .withDashSeparatorInDate]
-        let localDate = iso8601Formatter.string(from: locationModel!.dateCaptured)
-        return localDate
     }
     
     func setupMap(latitude: Double, longitude: Double) {
