@@ -34,3 +34,12 @@ public extension Location {
         return LocationModel(latitude: self.latitude, longitude: self.longitude, dateCaptured: self.date, descriptionToSave: self.locationDescription)
     }
 }
+
+public extension Date {
+    func stringFromDate()-> String {
+        let iso8601Formatter = ISO8601DateFormatter()
+        iso8601Formatter.formatOptions = [.withFullDate, .withDashSeparatorInDate]
+        let localDateString = iso8601Formatter.string(from: self)
+        return localDateString
+    }
+}
