@@ -20,7 +20,7 @@ class LocationDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locationDate = stringFromDate(date: locationModel.dateCaptured)
+        let locationDate = locationModel.dateCaptured.stringFromDate()
         dateLabel.text = "That happened on \(locationDate)"
         
         setupMap(latitude: Double(locationModel.latitude)!, longitude: Double(locationModel.longitude)!)
@@ -34,12 +34,6 @@ class LocationDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func stringFromDate(date: Date)-> String {
-        let iso8601Formatter = ISO8601DateFormatter()
-        iso8601Formatter.formatOptions = [.withFullDate, .withDashSeparatorInDate]
-        let localDate = iso8601Formatter.string(from: locationModel!.dateCaptured)
-        return localDate
-    }
     
     func setupMap(latitude: Double, longitude: Double) {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

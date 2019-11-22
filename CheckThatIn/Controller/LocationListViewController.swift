@@ -41,7 +41,6 @@ class LocationListViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return locations.count
@@ -49,15 +48,14 @@ class LocationListViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCollectionViewCell
-    
-        cell.labelLocationTitle.text = locations[indexPath.item].date!.description
-        // Configure the cell
-    
+        let latitude = locations[indexPath.item].latitude
+        let longitude = locations[indexPath.item].longitude
+        cell.labelLocationTitle.text = "lat:\(latitude!.prefix(5)),  long:\(longitude!.prefix(5))"
+        
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         switch segue.identifier {
         case "fromLocationListVCToLocationListVC":
             guard let selectedCollectionViewCell = sender as? LocationCollectionViewCell,
