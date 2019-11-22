@@ -19,8 +19,8 @@ class LocationDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let locationDate = stringFromDate(date: locationModel.dateCaptured)
+        // Do any additional setup after loading the view.
+        let locationDate = locationModel.dateCaptured.stringFromDate()
         dateLabel.text = "That happened on \(locationDate)"
         
         setupMap(latitude: Double(locationModel.latitude)!, longitude: Double(locationModel.longitude)!)
