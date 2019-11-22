@@ -28,18 +28,18 @@ class CoreDataLocationCRUD {
     
     func createLocation(location: LocationModel) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Location", in: managedContext)!
-        
-        let newLocation = Location(entity: entity, insertInto: managedContext)
-        newLocation.setValue(location.latitude, forKey: "latitude")
-        newLocation.setValue(location.longitude, forKey: "longitude")
-        newLocation.setValue(location.dateCaptured, forKey: "date")
-        newLocation.setValue(location.descriptionToSave, forKey: "locationDescription")
-        do {
-            try managedContext.save() }
-        catch let error as NSError {
-            print("Could not delete. \(error), \(error.userInfo)")
+        appDelegate.persistentContainer.performBackgroundTask { context in
+            let entity = NSEntityDescription.entity(forEntityName: "Location", in: context)!
+            let newLocation = Location(entity: entity, insertInto: context)
+            newLocation.setValue(location.latitude, forKey: "latitude")
+            newLocation.setValue(location.longitude, forKey: "longitude")
+            newLocation.setValue(location.dateCaptured, forKey: "date")
+            newLocation.setValue(location.descriptionToSave, forKey: "locationDescription")
+            do {
+                try context.save() }
+            catch let error as NSError {
+                print("Could not insert. \(error), \(error.userInfo)")
+            }
         }
     }
     
