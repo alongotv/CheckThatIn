@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BLK-19-a2e">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BLK-19-a2e">
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="CheckThatIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9JC-ce-jBV">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="07O-Fi-t9I"/>
                                 </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-xu-kUt" customClass="BackgroundStackView" customModule="CheckThatIn" customModuleProvider="target">
-                                <rect key="frame" x="344" y="686" width="50" height="126"/>
+                                <rect key="frame" x="250" y="390" width="50" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8M-SY-qLT">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -40,14 +38,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-Oo-YEV">
-                                        <rect key="frame" x="0.0" y="58" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="58" width="50" height="32"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
                                         <connections>
                                             <action selector="addLocationButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NhO-7A-QVd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fh-gN-thI">
-                                        <rect key="frame" x="0.0" y="96" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="98" width="50" height="30"/>
                                         <state key="normal" title="All "/>
                                         <connections>
                                             <segue destination="5aS-Fj-3Wn" kind="show" identifier="fromCurrentLocationVCToLocationListVC" id="fmf-9L-HJg"/>
@@ -81,7 +79,7 @@
             <objects>
                 <collectionViewController id="5aS-Fj-3Wn" customClass="LocationListViewController" customModule="CheckThatIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BAc-Pp-h7P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Az-mN-y9x">
@@ -92,22 +90,23 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LocationCollectionViewCell" id="OaQ-Va-s03" customClass="LocationCollectionViewCell" customModule="CheckThatIn" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="0.0" width="291" height="50"/>
+                                <rect key="frame" x="14.5" y="0.0" width="291" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="291" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-e6-kcr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-e6-kcr">
                                             <rect key="frame" x="16" y="15" width="259" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="J91-e6-kcr" firstAttribute="centerY" secondItem="OaQ-Va-s03" secondAttribute="centerY" id="7PY-9J-kf3"/>
+                                    <constraint firstItem="J91-e6-kcr" firstAttribute="centerX" secondItem="OaQ-Va-s03" secondAttribute="centerX" id="DmL-nf-K6F"/>
                                     <constraint firstItem="J91-e6-kcr" firstAttribute="centerX" secondItem="OaQ-Va-s03" secondAttribute="centerX" id="XuX-yz-Z78"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="J91-e6-kcr" secondAttribute="trailing" constant="8" id="aCL-cO-VhZ"/>
                                     <constraint firstItem="J91-e6-kcr" firstAttribute="leading" secondItem="OaQ-Va-s03" secondAttribute="leadingMargin" constant="8" id="gtc-gB-Bcx"/>
@@ -137,35 +136,45 @@
             <objects>
                 <viewController storyboardIdentifier="LocationDetailsViewController" id="Kb7-Fo-g8X" customClass="LocationDetailsViewController" customModule="CheckThatIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cX9-Ug-y0B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-54-v5f">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="PCh-hJ-oK9"/>
                                 </constraints>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That happened on: 1st september" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V1-ZI-OgT">
-                                <rect key="frame" x="16" y="396" width="382" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That happened on: 1st september" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V1-ZI-OgT" userLabel="Date Label">
+                                <rect key="frame" x="16" y="352" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLX-gE-GD0" userLabel="Description Label">
+                                <rect key="frame" x="16" y="380.5" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WhA-54-v5f" firstAttribute="trailing" secondItem="Gtb-Uh-3OO" secondAttribute="trailing" id="1E9-Iz-ehJ"/>
+                            <constraint firstItem="Gtb-Uh-3OO" firstAttribute="trailing" secondItem="kLX-gE-GD0" secondAttribute="trailing" constant="16" id="GBm-rr-56B"/>
                             <constraint firstItem="WhA-54-v5f" firstAttribute="leading" secondItem="Gtb-Uh-3OO" secondAttribute="leading" id="WHC-E5-gVw"/>
                             <constraint firstItem="Gtb-Uh-3OO" firstAttribute="trailing" secondItem="9V1-ZI-OgT" secondAttribute="trailing" constant="16" id="YHW-XH-dwe"/>
                             <constraint firstItem="9V1-ZI-OgT" firstAttribute="leading" secondItem="Gtb-Uh-3OO" secondAttribute="leading" constant="16" id="d9P-4S-krB"/>
                             <constraint firstItem="WhA-54-v5f" firstAttribute="top" secondItem="Gtb-Uh-3OO" secondAttribute="top" id="fbc-a9-LRR"/>
+                            <constraint firstItem="kLX-gE-GD0" firstAttribute="top" secondItem="9V1-ZI-OgT" secondAttribute="bottom" constant="8" id="jYo-4w-iHS"/>
+                            <constraint firstItem="kLX-gE-GD0" firstAttribute="leading" secondItem="Gtb-Uh-3OO" secondAttribute="leading" constant="16" id="xAz-x4-130"/>
                             <constraint firstItem="9V1-ZI-OgT" firstAttribute="top" secondItem="WhA-54-v5f" secondAttribute="bottom" constant="8" id="xxA-3m-C6j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtb-Uh-3OO"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionLabel" destination="9V1-ZI-OgT" id="eQy-0p-a7o"/>
+                        <outlet property="dateLabel" destination="9V1-ZI-OgT" id="eQy-0p-a7o"/>
+                        <outlet property="descriptionLabel" destination="kLX-gE-GD0" id="vum-dI-1W0"/>
                         <outlet property="mapViewDetails" destination="WhA-54-v5f" id="LC8-Vb-bMX"/>
                     </connections>
                 </viewController>
@@ -179,7 +188,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BLK-19-a2e" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gBR-eJ-RQh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
