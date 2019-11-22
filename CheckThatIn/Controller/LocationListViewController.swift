@@ -50,9 +50,11 @@ class LocationListViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCollectionViewCell
     
-        cell.labelLocationTitle.text = locations[indexPath.item].date!.description
         // Configure the cell
-    
+        let latitude = locations[indexPath.item].latitude
+        let longitude = locations[indexPath.item].longitude
+        cell.labelLocationTitle.text = "lat: \(latitude!.prefix(6)), long:  \(longitude!.prefix(6))"
+
         return cell
     }
     
