@@ -58,6 +58,17 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         locationManager.delegate = self
         locationManager.allowsBackgroundLocationUpdates = true
         requestPermissionToUseLocation()
+        
+        let coordinates = CLLocationCoordinate2D(latitude: 59.966363231, longitude: 30.312767365)
+        let region = CLCircularRegion(center: coordinates,
+        radius: kCLLocationAccuracyHundredMeters,
+        identifier: "geotification.identifier")
+        startMonitoringRegion(region: region)
+    }
+    
+    func startMonitoringRegion(region: CLRegion) {
+
+        locationManager.startMonitoring(for: region)
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
@@ -80,7 +91,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        <#code#>
+        
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
