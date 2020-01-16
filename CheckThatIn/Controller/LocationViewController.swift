@@ -54,9 +54,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
         
+        locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
         requestPermissionToUseLocation()
     }
     
@@ -75,6 +75,13 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, MKMap
         // Do something with the location.
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        <#code#>
+    }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
             // Location updates are not authorized.
